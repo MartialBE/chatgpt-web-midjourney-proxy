@@ -187,7 +187,11 @@ export default {
     "micWhisper": "Nhận diện giọng nói thì thầm",
     "micAsr": "Nhận diện ngay lập tức",
     "micRec": "Bắt đầu ghi âm, vui lòng nói chuyện! Sẽ tự động dừng nếu không có âm thanh trong vòng 2 giây.",
-    "micRecEnd": "Ghi âm đã kết thúc"
+    "micRecEnd": "Ghi âm đã kết thúc",
+
+    subtle: 'Cao độ phân giải cao gấp 2 lần'
+    ,creative: 'Cao độ phân giải cao gấp 2 lần. Sáng tạo'
+    ,gpt_gx: 'GPTs sử dụng g-*'
 
   },
   "mjset": {
@@ -276,8 +280,13 @@ export default {
     "no2add": "Vui lòng không thêm hình ảnh giống nhau",
     "add2more": "Vui lòng thêm ít nhất hai hình ảnh",
     "no1m": "Kích thước hình ảnh không quá 1M",
-    "imgExt": "Chỉ hỗ trợ định dạng jpg, gif, png, jpeg cho hình ảnh"
-    },
+    "imgExt": "Chỉ hỗ trợ định dạng jpg, gif, png, jpeg cho hình ảnh",
+    "setSync": "Đồng bộ hóa Midjourney và Suno",
+    "addGPTS": "Thêm GPTs",
+    "addPlaceholder": "Dán GID của GPTs vào đây hoặc dán trực tiếp liên kết của GPTs",
+    "gidError": "Không tìm thấy GID hợp lệ, vui lòng điền lại",
+    "success3": "Thêm GPTs thành công!"
+  },
 	draw: {
 		qualityList: {
 			general: "General",
@@ -391,6 +400,53 @@ export default {
     "menuinfo": "Sáng tạo âm nhạc Suno",
     "server": "Điểm cuối API Suno",
     "serverabout": "Liên quan đến Suno",
-    "setOpenKeyPlaceholder": "Khóa liên quan cho API Suno; tùy chọn"
+    "setOpenKeyPlaceholder": "Khóa liên quan cho API Suno; tùy chọn",
+
+    upMps: 'Tải lên âm thanh',
+    extend: 'Mở rộng',
+    extendFrom: 'Mở rộng từ',
+    extendAt: 'Bắt đầu mở rộng từ',
+    fail: 'Thất bại',
+    info: 'Hướng dẫn:<br>Thời lượng tải lên âm thanh phải từ 6 giây đến 60 giây'
+
    }
+   ,video:{
+    "menu": "Video",
+    "menuinfo": "Tạo video Luma và các video khác",
+    "descpls": "Mô tả tạo video",
+    "lumaabout": "Về Luma",
+    "lumaserver": "Địa chỉ API Luma",
+    "setOpenKeyPlaceholder": "Khóa API Luma, không bắt buộc",
+    "generate": "Tạo video",
+    "nodata": "Không có video có sẵn, vui lòng tạo trước!",
+    "selectimg": "Chọn ảnh",
+    "clear": "Xóa",
+    "plsInput": "Vui lòng nhập nội dung!",
+    "submitSuccess": "Đã gửi thành công!",
+    "process": "Đang tạo video...",
+    "repeat": "Thử lại"
+  }
+  ,dance:{
+    menu: "Nhảy múa",
+    menuinfo: "Tạo video nhảy múa với Viggle và các dịch vụ khác.",
+    character: "Nhân vật", 
+    viggleabout: "Thông tin về Viggle",
+    viggleserver: "Địa chỉ API của Viggle",
+    setOpenKeyPlaceholder: "Khóa API của Viggle, không bắt buộc",
+    info: "Hướng dẫn:<br>1. Hình ảnh nhân vật nên là ảnh toàn thân.<br>2. Video mẫu nhảy múa nên là video cá nhân, không phải là nhóm nhảy.",
+    model: "Mẫu",
+    bgw: "Nền trắng",
+    bgg: "Nền xanh lá",
+    bgmoban: "Nền mẫu",
+    bgrole: "Nền nhân vật",
+    gring: "Đang tạo...",
+    uprolefirst: "Vui lòng tải ảnh nhân vật lên trước",
+    uprolefail: "Tải lên thất bại",
+    upvideo: "+ Tải lên Video mẫu nhảy múa",
+    usevideo: "+ Sử dụng Mẫu chính thức",
+    moban: "Mẫu nhảy múa",
+    moban2: "Tên mẫu",
+    use: "Sử dụng"
+}
+
 }

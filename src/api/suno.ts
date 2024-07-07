@@ -5,7 +5,9 @@ import { sunoStore,SunoMedia } from "./sunoStore";
 const getUrl=(url:string)=>{
     if(url.indexOf('http')==0) return url;
     if(gptServerStore.myData.SUNO_SERVER){
-        return `${ gptServerStore.myData.SUNO_SERVER}${url}`;
+        if( gptServerStore.myData.SUNO_SERVER.indexOf('suno')>0 ) return `${ gptServerStore.myData.SUNO_SERVER}${url}`;
+
+        return `${ gptServerStore.myData.SUNO_SERVER}/suno${url}`;
     }
     return `/sunoapi${url}`;
 }
@@ -40,6 +42,7 @@ export const lyricsFetch= async ( lid:string)=>{
         let time= (i+1)
         if(time>20) time=20;
         if(dt.status=='complete') return dt ;
+        if( dt.status=='error') return null;
         await sleep( time*1000 )
         
     }
@@ -67,7 +70,7 @@ export const FeedTask= async (ids:string[])=>{
     mlog('FeedTask',d )
     d.forEach( (item:SunoMedia) =>{
          sunoS.save( item)
-        if(item.status== "complete"){
+        if(item.status== "complete" || item.status== "error" ){
             ids= ids.filter(v=>v!=item.id )
         }
     });
@@ -98,11 +101,17 @@ export const sunoFetch=(url:string,data?:any,opt2?:any )=>{
             opt.method='POST';
         }
         fetch(getUrl(url),  opt )
-        .then( d=>{
+        .then( async (d) =>{
             if (!d.ok) { 
-                 homeStore.myData.ms &&  homeStore.myData.ms.error('发生错误: '+ d.status )
-                throw new Error('服务器返回错误： ' + d.status);
+                let msg = '发生错误: '+ d.status
+                try{ 
+                  let bjson:any  = await d.json();
+                  msg = '('+ d.status+')发生错误: '+(bjson?.error?.message??'' ) 
+                }catch( e ){ 
                 }
+                homeStore.myData.ms &&  homeStore.myData.ms.error(msg )
+                throw new Error( msg );
+            }
      
             d.json().then(d=> resolve(d)).catch(e=>{ 
             

@@ -183,6 +183,13 @@ export default {
     ,add2more:'请添加两张以上图片'
     ,no1m:'图片大小不能超过{m}M'
     ,imgExt:'图片仅支持jpg,gif,png,jpeg格式'
+    ,setSync:'同步Midjourney、Suno设置'
+
+    ,addGPTS:'新增GPTs'
+    ,addPlaceholder:'将GPTs的gid贴这儿 也可直接贴gpts的链接'
+    ,gidError:'未找到有效的gid，请重新填写'
+    ,success3:'新增GPTs成功！'
+
   },
   mj:{
     setOpen:'OpenAI 相关',
@@ -287,6 +294,9 @@ export default {
     ,micRec:'开始录音,请说话！2秒内无声音将自动关闭'
     ,micRecEnd:'录音已结束'
 
+    ,subtle:'高清2倍'
+    ,creative:'高清2倍.创意'
+    ,gpt_gx:'GPTs用g-*'
   },
 
 	draw: {
@@ -404,6 +414,59 @@ export default {
     ,server:'Suno 接口地址'
     ,serverabout:'Suno 相关'
     ,setOpenKeyPlaceholder:'Suno API 的相关KEY；可不填'
+
+    ,upMps:'上传音频'
+    ,extend:'延伸'
+    ,extendFrom:'延伸于'
+    ,extendAt:'延伸开始于'
+    ,fail:'失败'
+    ,info:'说明:<br>上传音频时长必须在6s-60s内'
+    ,lyricsFail:'获取歌曲失败'
+  }
+  ,video:{
+    menu:"视频",
+    menuinfo:'Luma等 视频创作',
+    descpls:'视频创作描述',
+    lumaabout:"Luma 相关",
+    lumaserver:"Luma 接口地址",
+    setOpenKeyPlaceholder:'Luma API 的key, 可不填',
+    generate:'生成视频',
+    nodata:'暂无可用视频，请先生成！',
+    selectimg:'参考图片',
+    clear:'清除',
+    plsInput:'请输入内容！',
+    submitSuccess:'已提交成功！',
+    process:'视频生成中...',
+    repeat:'重新获取',
+
+    pending:'状态:队列中',
+    processing:'状态:队列中',
+    failed:'状态:生成失败！',
+    download:'下载',
+    extend:'延展',
+
+  }
+  ,dance:{
+    menu:"跳舞",
+    menuinfo:'Viggle等 跳舞视频创作'
+    ,character:'人物角色'
+    ,viggleabout:"Viggle 相关",
+    viggleserver:"Viggle 接口地址",
+    setOpenKeyPlaceholder:'Viggle API 的key, 可不填',
+    info:'说明:<br>1.角色图片最好是个人全身照片<br>2.跳舞模版视频最好是个人视频 别传群舞',
+    model:'模型',
+    bgw:'白色背景',
+    bgg:'绿色背景',
+    bgmoban:'模版背景',
+    bgrole:'角色背景',
+    gring:'生成中...',
+    uprolefirst:'请先上传角色图片',
+    uprolefail:'上传失败',
+    upvideo:'+上传模版跳舞视频',
+    usevideo:'+使用官网模版',
+    moban:'跳舞模版',
+    moban2:'模版名称',
+    use:'使用',
   }
 
 

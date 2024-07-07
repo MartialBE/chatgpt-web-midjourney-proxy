@@ -188,7 +188,11 @@ export default {
         "micWhisper": "Fısıltı konuşma tanıma",
         "micAsr": "Anında tanıma",
         "micRec": "Kayıt başlat, lütfen konuşun! 2 saniye boyunca ses yoksa otomatik olarak duracaktır.",
-        "micRecEnd": "Kayıt sona erdi"
+        "micRecEnd": "Kayıt sona erdi",
+
+        subtle: 'Haute définition 2x'
+        ,creative: 'Haute définition 2x. Créatif'
+        ,gpt_gx: 'Les GPT utilisent g-*'
     },
     "mjset": {
         "server": "Sunucu",
@@ -276,7 +280,12 @@ export default {
         "no2add": "Çift resim ekleme",
         "add2more": "Lütfen iki veya daha fazla resim ekleyin",
         "no1m": "Resim boyutu 1M'yi aşamaz",
-        "imgExt": "Resimler sadece jpg, gif, png, jpeg formatlarını destekler"
+        "imgExt": "Resimler sadece jpg, gif, png, jpeg formatlarını destekler",
+        "setSync": "Midjourney ve Suno'yu senkronize et",
+        "addGPTS": "GPT'ler Ekle",
+        "addPlaceholder": "GPT'lerin GID'sini buraya yapıştırın veya GPT'lerin bağlantısını doğrudan yapıştırın",
+        "gidError": "Geçerli GID bulunamadı, lütfen tekrar doldurun",
+        "success3": "GPT'ler başarıyla eklendi!"
     },
 	draw: {
 		qualityList: {
@@ -390,7 +399,52 @@ export default {
     "menuinfo": "Suno Müzik Oluşturma",
     "server": "Suno API Uç Noktası",
     "serverabout": "Suno İlgili",
-    "setOpenKeyPlaceholder": "Suno API için İlgili Anahtar; isteğe bağlı"
-   }
+    "setOpenKeyPlaceholder": "Suno API için İlgili Anahtar; isteğe bağlı",
 
+    upMps: 'Ses yükle',
+    extend: 'Genişlet',
+    extendFrom: 'Şundan genişlet',
+    extendAt: 'Genişletmeyi başlat',
+    fail: 'Başarısız',
+    info: 'Açıklamalar:<br>Yüklenen sesin süresi 6 saniye ile 60 saniye arasında olmalıdır'
+   }
+   ,video:{
+    "menu": "Videolar",
+    "menuinfo": "Luma ve diğer video oluşturma",
+    "descpls": "Video oluşturma açıklaması",
+    "lumaabout": "Luma Hakkında",
+    "lumaserver": "Luma API adresi",
+    "setOpenKeyPlaceholder": "Luma API anahtarı, isteğe bağlı",
+    "generate": "Video Oluştur",
+    "nodata": "Mevcut video yok, lütfen önce oluşturun!",
+    "selectimg": "Resim Seç",
+    "clear": "Temizle",
+    "plsInput": "Lütfen içerik girin!",
+    "submitSuccess": "Başarıyla gönderildi!",
+    "process": "Video oluşturuluyor...",
+    "repeat": "Yeniden dene"
+    }
+    ,
+    dance:{
+        menu: "Dans",
+        menuinfo: "Viggle ve diğerleri ile dans videoları oluşturun.",
+        character: "Karakter",
+        viggleabout: "Viggle Hakkında",
+        viggleserver: "Viggle API Endpoint",
+        setOpenKeyPlaceholder: "Viggle API anahtarı, isteğe bağlı",
+        info: "Yönergeler:<br>1. Karakter görüntüleri tercihen tam boy fotoğraflar olmalıdır.<br>2. Dans şablonu videoları kişisel videolar olmalı, grup dansları değil.",
+        model: "Model",
+        bgw: "Beyaz Arka Plan",
+        bgg: "Yeşil Arka Plan",
+        bgmoban: "Şablon Arka Planı",
+        bgrole: "Karakter Arka Planı",
+        gring: "Oluşturuluyor...",
+        uprolefirst: "Lütfen önce karakter resmi yükleyin",
+        uprolefail: "Yükleme başarısız oldu",
+        upvideo: "+ Şablon Dans Videosu Yükle",
+        usevideo: "+ Resmi Şablonu Kullan",
+        moban: "Dans Şablonu",
+        moban2: "Şablon Adı",
+        use: "Kullan"
+    }
   }

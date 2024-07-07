@@ -186,7 +186,11 @@ export default {
     "micWhisper": "속삭임 음성 인식",
     "micAsr": "즉시 인식",
     "micRec": "녹음 시작, 말씀하세요! 2초 동안 소리가 없으면 자동으로 중지됩니다.",
-    "micRecEnd": "녹음이 종료되었습니다"
+    "micRecEnd": "녹음이 종료되었습니다",
+
+    subtle: '고화질 2배'
+    ,creative: '고화질 2배. 창의적'
+    ,gpt_gx: 'GPTs는 g-*를 사용합니다'
 
   },
   "mjset": {
@@ -275,7 +279,13 @@ export default {
     ,"no2add": "이미지를 중복해서 추가하지 마십시오."
     ,"add2more": "두 장 이상의 이미지를 추가하십시오."
     ,"no1m": "이미지 크기는 1M를 초과할 수 없습니다."
+    ,"setSync": "Midjourney와 Suno를 동기화하십시오"
     ,"imgExt": "이미지는 jpg, gif, png, jpeg 형식만 지원됩니다."
+    ,"addGPTS": "GPTs 추가",
+    "addPlaceholder": "여기에 GPTs의 GID를 붙이거나 GPTs의 링크를 직접 붙여 넣을 수 있습니다.",
+    "gidError": "유효한 GID를 찾을 수 없습니다. 다시 작성해주세요.",
+    "success3": "GPTs 추가 성공!"
+    
   },
 	draw: {
 		qualityList: {
@@ -390,6 +400,53 @@ export default {
     "menuinfo": "Suno 음악 생성",
     "server": "Suno API 엔드포인트",
     "serverabout": "Suno 관련",
-    "setOpenKeyPlaceholder": "Suno API에 대한 관련 키; 선택 사항"
+    "setOpenKeyPlaceholder": "Suno API에 대한 관련 키; 선택 사항",
+
+    upMps: '오디오 업로드',
+    extend: '확장',
+    extendFrom: '출처',
+    extendAt: '시작',
+    fail: '실패',
+    info: '설명:<br>오디오 업로드 시간은 6초에서 60초 사이여야 합니다'
+
    }
+   ,video:{
+    "menu": "비디오",
+    "menuinfo": "Luma 및 다른 비디오 제작",
+    "descpls": "비디오 제작 설명",
+    "lumaabout": "Luma에 대해",
+    "lumaserver": "Luma API 엔드포인트",
+    "setOpenKeyPlaceholder": "Luma API 키, 선택 사항",
+    "generate": "비디오 생성",
+    "nodata": "사용할 수 있는 비디오가 없습니다. 먼저 생성하세요!",
+    "selectimg": "이미지 선택",
+    "clear": "지우기",
+    "plsInput": "내용을 입력하세요!",
+    "submitSuccess": "성공적으로 제출되었습니다!",
+    "process": "비디오 생성 중...",
+    "repeat": "재시도"
+  },
+  dance:{
+    menu: "댄스",
+    menuinfo: "Viggle 및 기타와 함께 댄스 비디오 제작",
+    character: "캐릭터",
+    viggleabout: "Viggle 소개",
+    viggleserver: "Viggle API 엔드포인트",
+    setOpenKeyPlaceholder: "Viggle API 키, 선택 사항",
+    info: "지침:<br>1. 캐릭터 이미지는 전신 사진이 좋습니다.<br>2. 댄스 템플릿 비디오는 개인 비디오여야 하며, 그룹 댄스가 아니어야 합니다.",
+    model: "모델",
+    bgw: "백색 배경",
+    bgg: "초록색 배경",
+    bgmoban: "템플릿 배경",
+    bgrole: "캐릭터 배경",
+    gring: "생성 중...",
+    uprolefirst: "먼저 캐릭터 이미지를 업로드하세요",
+    uprolefail: "업로드 실패",
+    upvideo: "+ 템플릿 댄스 비디오 업로드",
+    usevideo: "+ 공식 템플릿 사용",
+    moban: "댄스 템플릿",
+    moban2: "템플릿 이름",
+    use: "사용"
+}
+
 }

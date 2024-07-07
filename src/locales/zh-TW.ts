@@ -186,7 +186,10 @@ export default {
     "micWhisper": "Whisper語音識別",
     "micAsr": "即時識別",
     "micRec": "開始錄音，請說話！2秒內無聲音將自動關閉",
-    "micRecEnd": "錄音已結束"
+    "micRecEnd": "錄音已結束",
+    subtle: '高清2倍'
+    ,creative: '高清2倍. 創意'
+    ,gpt_gx: 'GPTs 用 g-*'
   },
   "mjset": {
     "server": "服務端",
@@ -272,7 +275,12 @@ export default {
     "no2add": "請勿重複添加圖片",
     "add2more": "請添加兩張以上圖片",
     "no1m": "圖片大小不能超過1M",
-    "imgExt": "圖片僅支持jpg,gif,png,jpeg格式"
+    "imgExt": "圖片僅支持jpg,gif,png,jpeg格式",
+    "setSync": "同步Midjourney和Suno",
+    "addGPTS": "新增 GPTs",
+    "addPlaceholder": "將 GPTs 的 gid 貼這裡 也可直接貼 GPTs 的鏈接",
+    "gidError": "未找到有效的 gid，请重新填寫",
+    "success3": "新增 GPTs 成功！"
   },
 	draw: {
 		qualityList: {
@@ -387,7 +395,53 @@ export default {
     "menuinfo": "Suno 音樂創作",
     "server": "Suno API 端點",
     "serverabout": "Suno 相關",
-    "setOpenKeyPlaceholder": "Suno API 的相關KEY；可不填"
+    "setOpenKeyPlaceholder": "Suno API 的相關KEY；可不填",
+
+    upMps: '上載音頻',
+    extend: '擴展',
+    extendFrom: '擴展自',
+    extendAt: '擴展始於',
+    fail: '失敗',
+    info: '說明：<br>上載音頻的持續時間必須在6秒到60秒之間'
 
    }
+   ,video:{
+    "menu": "視頻",
+    "menuinfo": "Luma及其他視頻創作",
+    "descpls": "視頻創作描述",
+    "lumaabout": "關於Luma",
+    "lumaserver": "Luma API端點",
+    "setOpenKeyPlaceholder": "Luma API金鑰，選填",
+    "generate": "生成視頻",
+    "nodata": "暫無可用視頻，請先生成！",
+    "selectimg": "選擇圖片",
+    "clear": "清除",
+    "plsInput": "請輸入內容！",
+    "submitSuccess": "提交成功！",
+    "process": "視頻生成中...",
+    "repeat": "重新獲取"
+  },
+  dance:{
+    menu: "跳舞",
+    menuinfo: "使用 Viggle 等創作舞蹈影片。",
+    character: "人物角色",
+    viggleabout: "關於 Viggle",
+    viggleserver: "Viggle API 接口地址",
+    setOpenKeyPlaceholder: "Viggle API 的 key，可選填",
+    info: "說明：<br>1. 角色圖片最好是全身照片。<br>2. 舞蹈模板影片最好是個人影片，不要是團體舞蹈。",
+    model: "模型",
+    bgw: "白色背景",
+    bgg: "綠色背景",
+    bgmoban: "模板背景",
+    bgrole: "角色背景",
+    gring: "生成中...",
+    uprolefirst: "請先上傳角色圖片",
+    uprolefail: "上傳失敗",
+    upvideo: "+ 上傳模板跳舞影片",
+    usevideo: "+ 使用官方模板",
+    moban: "跳舞模板",
+    moban2: "模板名稱",
+    use: "使用"
+}
+
 }

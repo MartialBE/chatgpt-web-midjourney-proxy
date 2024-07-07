@@ -22,7 +22,10 @@ module.exports = (req, res) => {
             ,gptUrl : process.env.GPT_URL?? ""
             ,theme : process.env.SYS_THEME?? "dark"
             ,isCloseMdPreview : process.env.CLOSE_MD_PREVIEW?true:false
-            
+            ,menuDisable: process.env.MENU_DISABLE??""
+            ,visionModel: process.env.VISION_MODEL??""
+            ,systemMessage: process.env.SYSTEM_MESSAGE??""
+            ,customVisionModel: process.env.CUSTOM_VISION_MODELS??""
 
         }
     }
