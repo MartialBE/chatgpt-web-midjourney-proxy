@@ -37,12 +37,12 @@ export function sleep(time: number) {
 }
 export const lyricsFetch= async ( lid:string)=>{
     for(let i=0;i<50;i++){
-        let dt:any = await sunoFetch(`/lyrics/${lid}`);
+        let dt:any = await sunoFetch(`/fetch/${lid}`);
         mlog("ddd",dt )
         let time= (i+1)
         if(time>20) time=20;
-        if(dt.status=='complete') return dt ;
-        if( dt.status=='error') return null;
+        if(dt.data.status=='SUCCESS') return dt.data.data ;
+        if( dt.status=='FAILURE') return null;
         await sleep( time*1000 )
         
     }
@@ -62,21 +62,30 @@ export function randStyle(): string {
     return randomS + " " + randomL ;
 }
 
-export const FeedTask= async (ids:string[])=>{
+export const FeedTask= async (id:string)=>{
     const sunoS = new sunoStore();
-    if(ids.length<=0) return;
-    
-    let d:any[] = await sunoFetch('/feed/'+ ids.join(','));
+    let d:any = await sunoFetch(`/fetch/${id}`);
     mlog('FeedTask',d )
-    d.forEach( (item:SunoMedia) =>{
-         sunoS.save( item)
-        if(item.status== "complete" || item.status== "error" ){
-            ids= ids.filter(v=>v!=item.id )
+    homeStore.myData.ms &&  homeStore.myData.ms.info('正在生成歌曲，请稍候...')
+
+    if (d.data.status == 'FAILURE') {
+        homeStore.myData.ms &&  homeStore.myData.ms.error('生成歌曲失败：' + d?.message || '' + d?.data?.fail_reason || '' )
+        return
+    }
+
+    if (d.data.status == 'SUCCESS' || d.data.status == 'IN_PROGRESS') {
+        d.data.data.forEach((item: SunoMedia) => {
+            sunoS.save(item)
+        });
+
+        if (d.data.status == 'SUCCESS') {
+            return
         }
-    });
+    }
+
     homeStore.setMyData({act:'FeedTask'});
     await sleep(5*1020 );
-    FeedTask(ids)
+    FeedTask(id)
 
 }
 
@@ -106,7 +115,7 @@ export const sunoFetch=(url:string,data?:any,opt2?:any )=>{
                 let msg = '发生错误: '+ d.status
                 try{ 
                   let bjson:any  = await d.json();
-                  msg = '('+ d.status+')发生错误: '+(bjson?.error?.message??'' ) 
+                  msg = '('+ d.status+')发生错误: '+(bjson?.message??'' ) 
                 }catch( e ){ 
                 }
                 homeStore.myData.ms &&  homeStore.myData.ms.error(msg )

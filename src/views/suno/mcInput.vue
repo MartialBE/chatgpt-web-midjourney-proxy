@@ -63,9 +63,9 @@ const generateLyrics= ()=>{
     }
     st.value.isLoading =true;
     ms.info( t('suno.doingly2') );
-    sunoFetch(  '/generate/lyrics/' ,  {prompt}).then(async (r:any )=>{
+    sunoFetch(  '/submit/lyrics' ,  {prompt}).then(async (r:any )=>{
         mlog('lyrics', r);
-        let dz:any = await lyricsFetch( r.id );
+        let dz:any = await lyricsFetch( r.data );
         
          mlog('lyrics rz =>', dz );
         if(dz!=null){  
@@ -84,28 +84,30 @@ const generateLyrics= ()=>{
 
 const generate= async ()=>{
     st.value.isLoading =false;
-    let ids:string[]= ["0d435185-d440-42c8-982a-50205e1cf17d","43e095ba-5f08-4920-bb3d-89dd0defe0b7"];
-    ids=["d359a0aa-adf1-4298-9074-005573d7cc84","12e3d62f-8fcc-497b-8365-194657582519"]
+    let id:string = "";
+    // ids=["d359a0aa-adf1-4298-9074-005573d7cc84","12e3d62f-8fcc-497b-8365-194657582519"]
 
     if(st.value.type=='custom'){ 
         if(des.value.make_instrumental) cs.value.prompt='';
-        if( cs.value.continue_clip_id!='' && exSuno.value?.metadata?.type=='upload' ){
-            //chirp-v3-5-upload
-            cs.value.mv='chirp-v3-5-upload'
-        }
-        let r:any= await sunoFetch(  '/generate' ,  cs.value ) 
+        // if( cs.value.continue_clip_id!='' && exSuno.value?.metadata?.type=='upload' ){
+        //     //chirp-v3-5-upload
+        //     cs.value.mv='chirp-v3-5-upload'
+        // }
+        let r:any= await sunoFetch(  '/submit/music' ,  cs.value ) 
         st.value.isLoading =false;
 
-       ids=r.clips.map((r:any)=>r.id);
-       mlog('ids ', ids );
-       if( cs.value.mv='chirp-v3-5-upload' ) cs.value.mv='chirp-v3-5'
+    //    ids=r.clips.map((r:any)=>r.id);
+        id=r.data;
+        mlog('id ', id );
+    //    if( cs.value.mv='chirp-v3-5-upload' ) cs.value.mv='chirp-v3-5'
     }else{
         des.value.prompt=cs.value.title;
-        let r:any= await sunoFetch(  '/generate/description-mode' ,  des.value )  
+        let r:any= await sunoFetch(  '/submit/music' ,  des.value )  
         st.value.isLoading =false; 
-        ids=r.clips.map((r:any)=>r.id);
+        id=r.data;
+    //    ids=r.clips.map((r:any)=>r.id);
     }
-    FeedTask(ids)
+    FeedTask(id)
 }
 
 
